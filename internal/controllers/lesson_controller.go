@@ -3,8 +3,8 @@ package controllers
 import (
 	"net/http"
 
-	"lms-backend/config"
-	"lms-backend/models"
+	"lms-backend/internal/config"
+	"lms-backend/internal/models"
 
 	"github.com/gin-gonic/gin"
 )

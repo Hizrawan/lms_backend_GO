@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"fmt"
-	"lms-backend/config"
-	"lms-backend/models"
+	"lms-backend/internal/config"
+	"lms-backend/internal/models"
 	"net/http"
 	"time"
 

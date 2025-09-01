@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"lms-backend/controllers"
+	"lms-backend/internal/controllers"
 
 	"github.com/gin-gonic/gin"
 )

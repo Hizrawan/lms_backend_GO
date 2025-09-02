@@ -7,7 +7,7 @@ import (
 	"github.com/golang-jwt/jwt/v5"
 )
 
-var jwtKey = []byte(getEnv("JWT_SECRET", "replace_me"))
+var jwtKey = []byte(getEnv("JWT_SECRET", "j4N9anSh@rE_t0K3NkEy!N1!123456789"))
 
 func getEnv(key, fallback string) string {
 	v := os.Getenv(key)
@@ -17,9 +17,15 @@ func getEnv(key, fallback string) string {
 	return v
 }
 
-func GenerateToken(userID uint, role string) (string, error) {
+// Ekspos jwtKey supaya bisa dipakai middleware
+func JwtKey() []byte {
+	return jwtKey
+}
+
+func GenerateToken(userID uint, role string, userName string) (string, error) {
 	claims := jwt.MapClaims{
 		"user_id": userID,
+		"user_name":userName
 		"role":    role,
 		"exp":     time.Now().Add(72 * time.Hour).Unix(),
 	}

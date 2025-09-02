@@ -1,4 +1,4 @@
-package main
+package server
 
 import (
 	"lms-backend/internal/config"
@@ -9,7 +9,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func main() {
+func Run() {
 	if err := godotenv.Load(); err != nil {
 		log.Println("No .env file found; relying on environment variables")
 	}
@@ -21,5 +21,6 @@ func main() {
 	if port == "" {
 		port = "8080"
 	}
+	log.Printf("Server running on port %s\n", port)
 	r.Run(":" + port)
 }

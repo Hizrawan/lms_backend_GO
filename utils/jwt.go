@@ -24,10 +24,10 @@ func JwtKey() []byte {
 
 func GenerateToken(userID uint, role string, userName string) (string, error) {
 	claims := jwt.MapClaims{
-		"user_id": userID,
-		"user_name":userName
-		"role":    role,
-		"exp":     time.Now().Add(72 * time.Hour).Unix(),
+		"user_id":   userID,
+		"user_name": userName,
+		"role":      role,
+		"exp":       time.Now().Add(72 * time.Hour).Unix(),
 	}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 	return token.SignedString(jwtKey)
